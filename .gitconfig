@@ -1,6 +1,6 @@
 [user]
-	email = farvellsmurf@gmail.com
-	name = farvellmaster
+	email = youremail@mail.com
+	name = username
 [alias]
     ignored = !git ls-files -v | grep "^[[:lower:]]"
     ci = commit
