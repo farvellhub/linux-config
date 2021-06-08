@@ -15,17 +15,18 @@
 ### Add your email and username.
 
 # Commands:
-
+- status
 ```bash
-git st // status
+git st 
 ```
+- log
 ```bash
-git lg // log
+git lg 
 ```
+- checkout
 ```bash
-git co // checkout
+git co 
 ```
-
 
 ## Show your support
 
