@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> My personal git configuration.
+> My personal git configuration and scripts.
 
 ## Installation
 
