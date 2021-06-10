@@ -1,9 +1,12 @@
 <h1 align="center">Welcome to my personal GitConfig👋</h1>
 <p align="center">
+  <a href="#" target="_blank">
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+    </a>
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg" />
   </a>
+ <a href="https://discord.gg/tpNtcJHw" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
 </p>
 
 > My personal git configuration and scripts.
