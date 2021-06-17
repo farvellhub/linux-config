@@ -13,9 +13,9 @@
 
 ## Installation
 
-- Put .gitconfig and .config to your home root directory.
+- Put all at your home root directory.
 
-### Add your email and username.
+Add your email and username.
 
 # Commands:
 - status
