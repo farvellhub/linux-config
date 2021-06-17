@@ -19,6 +19,6 @@ set hidden  " Permitir cambiar de buffers sin tener que guardarlos
 set ignorecase  " Ignorar mayúsculas al hacer una búsqueda
 set smartcase  " No ignorar mayúsculas si la palabra a buscar contiene mayúsculas
 
-set spelllang=es  " Corregir palabras usando diccionarios en inglés y español
+set spelllang=en, es  " Corregir palabras usando diccionarios en inglés y español
 
 set termguicolors  " Activa true colors en la terminal
