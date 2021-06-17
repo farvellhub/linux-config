@@ -15,8 +15,6 @@
 
 - Put all at your home root directory.
 
-Add your email and username.
-
 # Commands:
 - status
 ```bash
