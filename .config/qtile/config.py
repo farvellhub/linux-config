@@ -5,6 +5,7 @@
 # Copyright (c) 2012 Craig Barnes
 # Copyright (c) 2013 horsik
 # Copyright (c) 2013 Tao Sauvage
+# Copyright (c) 2021 Farvell
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -40,7 +41,7 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(),
+    Key([mod], "Tab", lazy.layout.next(),
         desc="Move window focus to other window"),
 
     # Move windows between left/right columns or move up/down in current stack.
@@ -49,8 +50,7 @@ keys = [
         desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
         desc="Move window to the right"),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(),
-        desc="Move window down"),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
 
     # Grow windows. If current window is on the edge of screen and direction
@@ -59,8 +59,7 @@ keys = [
         desc="Grow window to the left"),
     Key([mod, "control"], "l", lazy.layout.grow_right(),
         desc="Grow window to the right"),
-    Key([mod, "control"], "j", lazy.layout.grow_down(),
-        desc="Grow window down"),
+    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
@@ -73,13 +72,12 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -103,8 +101,8 @@ layouts = [
     layout.Columns(border_focus_stack='#d75f5f'),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
+    layout.Stack(num_stacks=2),
+    layout.Bsp(),
     # layout.Matrix(),
     # layout.MonadTall(),
     # layout.MonadWide(),
@@ -116,17 +114,17 @@ layouts = [
 ]
 
 
-
 # This is the color array
 
-colors = [["#282c34", "#282c34"], # panel background
-          ["#3d3f4b", "#434758"], # background for current screen tab
-          ["#ffffff", "#ffffff"], # font color for group names
-          ["#ff5555", "#ff5555"], # border line color for current tab
-          ["#74438f", "#74438f"], # border line color for 'other tabs' and color for 'odd widgets'
-          ["#4f76c7", "#4f76c7"], # color for the 'even widgets'
-          ["#e1acff", "#e1acff"], # window name
-          ["#ecbbfb", "#ecbbfb"]] # backbround for inactive screens
+colors = [["#282c34", "#282c34"],  # panel background
+          ["#3d3f4b", "#434758"],  # background for current screen tab
+          ["#ffffff", "#ffffff"],  # font color for group names
+          ["#ff5555", "#ff5555"],  # border line color for current tab
+          # border line color for 'other tabs' and color for 'odd widgets'
+          ["#74438f", "#74438f"],
+          ["#4f76c7", "#4f76c7"],  # color for the 'even widgets'
+          ["#e1acff", "#e1acff"],  # window name
+          ["#ecbbfb", "#ecbbfb"]]  # backbround for inactive screens
 
 widget_defaults = dict(
     font="Ubuntu Mono",
@@ -141,48 +139,48 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayout(
-                    foreground = colors[2],
-                    background = colors[4],
-                    padding = 5
-                    ),
+                    foreground=colors[2],
+                    background=colors[4],
+                    padding=5
+                ),
                 widget.GroupBox(
-                    font = "Ubuntu Bold",
-                    fontsize = 12,
-                    margin_y = 3,
-                    margin_x = 5,
-                    padding_y = 5,
-                    padding_x = 3,
-                    borderwidth = 3,
-                    active = colors[2],
-                    inactive = colors[7],
-                    rounded = False,
-                    highlight_color = colors[1],
-                    highlight_method = "line",
-                    this_current_screen_border = colors[6],
-                    this_screen_border = colors[4],
-                    other_current_screen_border = colors[6],
-                    other_screen_border = colors[4],
-                    foreground = colors[2],
-                    background = colors[0]
-                    ),
+                    font="Ubuntu Bold",
+                    fontsize=12,
+                    margin_y=3,
+                    margin_x=5,
+                    padding_y=5,
+                    padding_x=3,
+                    borderwidth=3,
+                    active=colors[2],
+                    inactive=colors[7],
+                    rounded=False,
+                    highlight_color=colors[1],
+                    highlight_method="line",
+                    this_current_screen_border=colors[6],
+                    this_screen_border=colors[4],
+                    other_current_screen_border=colors[6],
+                    other_screen_border=colors[4],
+                    foreground=colors[2],
+                    background=colors[0]
+                ),
                 widget.Prompt(
-                    font = "Ubuntu Mono",
-                    fontsize = 12,
-                    padding = 10,
-                    foreground = colors[3],
-                    background = colors[1]
-                    ),
+                    font="Ubuntu Mono",
+                    fontsize=12,
+                    padding=10,
+                    foreground=colors[3],
+                    background=colors[1]
+                ),
                 widget.Sep(
-                    linewidth = 0,
-                    padding = 40,
-                    foreground = colors[2],
-                    background = colors[0]
-                    ),
+                    linewidth=0,
+                    padding=40,
+                    foreground=colors[2],
+                    background=colors[0]
+                ),
                 widget.WindowName(
-                    foreground = colors[6],
-                    background = colors[0],
-                    padding = 0
-                    ),
+                    foreground=colors[6],
+                    background=colors[0],
+                    padding=0
+                ),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
@@ -190,18 +188,18 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(
-                    background = colors[0],
-                    padding = 5
-                    ),
+                    background=colors[0],
+                    padding=5
+                ),
                 widget.Clock(
-                    foreground = colors[2],
-                    background = colors[5],
-                    format = "  %A, %B %d - %H:%M   "
-                    ),
+                    foreground=colors[2],
+                    background=colors[5],
+                    format="  %A, %B %d - %H:%M   "
+                ),
                 widget.QuickExit(
-                    background = colors[3],
-                    default_text = " SHUTDOWN "
-                    ),
+                    background=colors[3],
+                    default_text=" SHUTDOWN "
+                ),
             ],
             24,
         ),
@@ -223,6 +221,7 @@ main = None  # WARNING: this is deprecated and will be removed soon
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
+
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
     *layout.Floating.default_float_rules,
@@ -233,6 +232,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
 ])
+
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
