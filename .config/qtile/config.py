@@ -69,7 +69,7 @@ keys = [
     # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key(["shift"], "w", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
     Key([mod], "tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -145,7 +145,7 @@ screens = [
                 ),
                 widget.GroupBox(
                     font="Ubuntu Bold",
-                    fontsize=12,
+                    fontsize=14,
                     margin_y=3,
                     margin_x=5,
                     padding_y=5,
@@ -165,7 +165,7 @@ screens = [
                 ),
                 widget.Prompt(
                     font="Ubuntu Mono",
-                    fontsize=12,
+                    fontsize=14,
                     padding=10,
                     foreground=colors[3],
                     background=colors[1]
@@ -198,7 +198,7 @@ screens = [
                 ),
                 widget.QuickExit(
                     background=colors[3],
-                    default_text=" SHUTDOWN "
+                    default_text=" shutdown "
                 ),
             ],
             24,
