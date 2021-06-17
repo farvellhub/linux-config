@@ -13,7 +13,7 @@
 
 ## Installation
 
-- Put .gitconfig to your home root directory.
+- Put .gitconfig and .config to your home root directory.
 
 ### Add your email and username.
 
