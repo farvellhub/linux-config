@@ -9,7 +9,7 @@
  <a href="https://discord.gg/tpNtcJHw" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
 </p>
 
-> My personal git configuration and scripts.
+> My personal git configuration and scripts for linux.
 
 ## Installation
 
