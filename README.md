@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to my personal GitConfig👋</h1>
+<h1 align="center">Welcome to my personal Linux Config👋</h1>
 <p align="center">
   <a href="#" target="_blank">
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
@@ -14,6 +14,7 @@
 ## Installation
 
 - Put all at your home root directory.
+- In .gitconfig change email and username.
 
 # Commands:
 - status
@@ -28,6 +29,13 @@ git lg
 ```bash
 git co 
 ```
+
+## Characteristics
+
+- dwmenu
+- dwm
+- alacritty
+- yay
 
 ## Show your support
 
