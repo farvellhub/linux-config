@@ -30,13 +30,6 @@ git lg
 git co 
 ```
 
-## Characteristics
-
-- dwmenu
-- dwm
-- alacritty
-- yay
-
 ## Show your support
 
 Give a ⭐️ if this project helped you!
